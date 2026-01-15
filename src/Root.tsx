@@ -12,6 +12,7 @@ export const Root = () => {return <div className="space-x-2 space-y-2 flex flex-
 
 
 
+
 </div>};
 
 const Card = (props:{title:string,image:string}) => {
