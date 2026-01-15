@@ -1,48 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 
-export const Root = () => {
-  const [count, setCount] = useState(0);
-  const [title, setTitle] = useState("Titolo iniziale");
+export const Root = () => {return <div className="space-x-2 space-y-2 flex flex-wrap text-l ">
 
-  useEffect(() => {
-    if (count === 4) {
-      setTitle("Il titolo ha superato il 4");
-    }
-  }, [count]);
+<Card title="Pikachu - 0" image="https://placehold.co/400x400" />
+<Card title="02" image=""/>
+<Card title="03" image=""/>
+<Card title="04" image=""/>
+<Card title="05" image=""/>
+<Card title="06" image=""/>
 
-  return (
-    <div className="h-dvh flex flex-col items-center justify-center">
-      <div className="bg-white p-8 rounded-md shadow-lg">
-        <h1 className="text-center font-bold text-3xl text-blue-400 mb-4">
-          {title}
-        </h1>
 
-        <h2 className="text-center font-bold text-xl mb-6">Vite + React</h2>
+</div>};
 
-        <div className="flex flex-col items-center space-y-4">
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md cursor-pointer hover:bg-blue-600 transition-colors"
-            onClick={() => setCount((count) => count + 1)}
-          >
-            Hai premuto il pulsante {count} {count === 1 ? "volta" : "volte"}
-          </button>
-
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md cursor-pointer hover:bg-blue-600 transition-colors"
-            onClick={() => setTitle("Charizard")}
-          >
-            Cambia titolo
-          </button>
-
-          <Link
-            to="/frontend-rocks/dettaglio/1"
-            className="text-blue-500 underline"
-          >
-            Link alla pagina di dettaglio
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
+const Card = (props:{title:string,image:string}) => {
+  return <div className="bg-white w-40 h-40 text-up flex flex-wrap rounded-md px-4 pt-4">  {props.title}
+<img src={props.image}/> </div>
+}
